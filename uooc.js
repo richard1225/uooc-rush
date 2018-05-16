@@ -1,4 +1,4 @@
-// player = document.querySelectorAll("#player_html5_api")[0]               // 选择a
+player = document.querySelectorAll("#player_html5_api")[0]               // 选择a
 // player.playbackRate = 10             // 十倍速播放
 
 // player.duration  // 视频总长度
@@ -45,10 +45,7 @@ function loop_play(play_time) {
     // 循环播放的次数
     setTimeout(function () {
         if (play_time != 0) {
-            document
-            .querySelector(".vjs-big-play-button.animated.fadeIn").click()      //  点击播放
-            console.log("click play");
-            play_time --;
+            
             loop_play(play_time);
         }
         else{
@@ -59,6 +56,7 @@ function loop_play(play_time) {
 
 function drag_pbar(){
     player.currentTime = player.duration;
+    console.log("drag_bar")
     delay_exc(next_course,5);
 
 }
