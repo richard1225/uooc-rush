@@ -29,7 +29,7 @@ function play_video(){
     player = document.querySelectorAll("#player_html5_api")[0] // 选择a
     v_time = player.duration;
     play_time = v_time/5;
-    loop_play(play_video);
+    loop_play(play_time);
 }
 
 function delay_exc(func, dtime){
@@ -46,8 +46,9 @@ function loop_play(play_time) {
         if (play_time != 0) {
             document
             .querySelector(".vjs-big-play-button.animated.fadeIn").click();      //  点击播放
-            
+            play_time -= 1;
             loop_play(play_time);
+            console.log(play_time)
         }
         else{
             drag_pbar();
