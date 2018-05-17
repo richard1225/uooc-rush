@@ -1,4 +1,4 @@
-player = document.querySelectorAll("#player_html5_api")[0]               // 选择a
+var player;               // 选择a
 // player.playbackRate = 10             // 十倍速播放
 
 // player.duration  // 视频总长度
@@ -25,13 +25,12 @@ function open_video(){
 function play_video(){
     document
     .querySelector(".vjs-big-play-button.animated.fadeIn").click();      //  点击播放
-
+    
+    player = document.querySelectorAll("#player_html5_api")[0] // 选择a
     v_time = player.duration;
     play_time = v_time/5;
     loop_play(play_video);
 }
-
-
 
 function delay_exc(func, dtime){
     // 延迟执行func， dtime 为 秒
@@ -45,6 +44,8 @@ function loop_play(play_time) {
     // 循环播放的次数
     setTimeout(function () {
         if (play_time != 0) {
+            document
+            .querySelector(".vjs-big-play-button.animated.fadeIn").click();      //  点击播放
             
             loop_play(play_time);
         }
