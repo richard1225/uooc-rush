@@ -57,9 +57,14 @@ function loop_play(play_time) {
 }
 
 function drag_pbar(){
-    player.currentTime = player.duration;
-    console.log("drag_bar")
-    delay_exc(next_course,5);
+    try{
+        player.currentTime = player.duration;
+        console.log("drag_bar")
+        delay_exc(next_course,5);
+    }catch(e){
+        console.log(e)
+        delay_exc(next_course,50);
+    }
 
 }
 
